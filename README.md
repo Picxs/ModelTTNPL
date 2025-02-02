@@ -13,3 +13,4 @@ Pela pasta ./notebooks acessando o arquivo Relatório.ipynb, que é o relatório
 
 É possível utilizar os modelos treinados pelo notebook utilizando usando o FastAPI, use o script *python -m uvicorn src.deployment.api:app --host 0.0.0.0 --port 8000 --reload* e acesse o link gerado. Na api será possível utilizar uma versão adaptada para os padrões da api da função test_all_models.
 
+Um leve adendo, os diagramas mermaid não foram gerados corretamente no Relatório.ipynb, mas se o arquivo for rodado no VSCode tendo a extensão de Mermaid Preview, vai funcionar perfeitamente
