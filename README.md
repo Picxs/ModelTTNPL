@@ -7,7 +7,7 @@ A ideia do projeto foi testar 3 modelos diferentes (Logistic Regression, Random 
 
 São duas formas de utilizar o modelo:
 
-Pela pasta ./ModelTTNPL, acessando o terminal, onde o usuário pode rodar o script *python -m models.model* para iniciar o processo de aquisição de data, processamento dos dados e treinamento do modelo. Está maneira de rodar o modelo vai somente até a etapa onde os modelos são treinados e salvos, ele não contem a análise exploratória completa. O treinamento dessa maneira demora um pouco mais que o normal.
+Acessando o terminal, onde o usuário pode rodar o script *python -m models.model* para iniciar o processo de aquisição de data, processamento dos dados e treinamento do modelo. Está maneira de rodar o modelo vai somente até a etapa onde os modelos são treinados e salvos, ele não contem a análise exploratória completa. O treinamento dessa maneira demora um pouco mais que o normal.
 
 Pela pasta ./notebooks acessando o arquivo Relatório.ipynb, que é o relatório sobre todo o projeto, detalhando o código como um todo, e ao mesmo tempo é uma maneira mais visual de ver o funcionamento do modelo.
 
