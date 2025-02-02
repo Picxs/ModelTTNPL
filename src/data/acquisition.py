@@ -3,7 +3,7 @@ import urllib.request
 import zipfile
 import argparse
 
-def fetch_data(download_url, output_dir="models/data/raw"):
+def fetch_data(download_url, output_dir="data/raw"):
     """
     Função que baixa os dados de reclamações a partir de uma URL fornecida usando urllib e descompacta o arquivo ZIP.
     
@@ -11,30 +11,30 @@ def fetch_data(download_url, output_dir="models/data/raw"):
     download_url: string contendo a url para download
     output_dir: diretório onde será salvo os dados descompactados.
     """
-    os.makedirs(output_dir, exist_ok=True)
     
-    # Nome do arquivo ZIP e caminho de saída
+    os.makedirs(output_dir, exist_ok=True)
+
     file_name = download_url.split("/")[-1]
     output_path = os.path.join(output_dir, file_name)
     
-    # Verifica se o diretório já contém arquivos extraídos
+    # Nesta linha o os. checa se o arquivo já foi extraido, para que o processo não fique redundante e nem gere cópias desnecessárias
     extracted_files = [f for f in os.listdir(output_dir) if f != file_name]
     
     if extracted_files:
         print(f"Os arquivos já foram extraídos em {output_dir}. Nenhuma ação necessária.")
-        return  # Sai da função
+        return
     
     try:
-        # Fazendo o download do arquivo
+        # Aqui é utilizado o urllib.request para fazer o download do .zip do DataFrame usando a url  
         urllib.request.urlretrieve(download_url, output_path)
         print(f"Arquivo ZIP salvo em: {output_path}")
         
-        # Descompactando o arquivo ZIP
+        # Aqui é utilizado o zipfile para descompactar o .zip do DataFrame
         with zipfile.ZipFile(output_path, 'r') as zip_ref:
             zip_ref.extractall(output_dir)
             print(f"Arquivos descompactados em: {output_dir}")
         
-        # Removendo o arquivo ZIP após descompactar
+        # Aqui é removido o arquivo .zip que não é mais necessário.
         os.remove(output_path)
         print(f"Arquivo ZIP {file_name} removido.")
     

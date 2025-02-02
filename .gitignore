@@ -1,0 +1,7 @@
+# Ignorar arquivos de texto, CSV e pickle
+*.txt
+*.csv
+*.pkl
+__pycache__/
+*.pyc
+__init__.py

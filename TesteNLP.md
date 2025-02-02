@@ -24,7 +24,7 @@ O candidato deverá selecionar um conjunto de dados de reclamações de veículo
 
 4. **[X] Deploy e Versionamento**: Implementar o deploy do modelo treinado utilizando ferramentas de versionamento de código (como Git) e gerenciamento de pacotes (como pip ou conda). A solução deve ser facilmente reproduzível.
 
-5. **[ ] Relatório e Análise Estatística**: Gerar um relatório conciso que inclua:
+5. **[X] Relatório e Análise Estatística**: Gerar um relatório conciso que inclua:
     - Descrição (ou desenho (desenho conta mais kkk)) da pipeline de processamento de dados.
     - Análise estatística descritiva dos dados, com gráficos relevantes (histogramas, boxplots, etc.) e comentários interpretando os resultados, não vale só plotar graficozinho.
     - Detalhes sobre o modelo escolhido, incluindo a arquitetura (se aplicável) e justificativa para a sua escolha.
@@ -35,7 +35,7 @@ O candidato deverá selecionar um conjunto de dados de reclamações de veículo
 
 1. **[ ] Avaliação de Data Drift**: Utilizar um outro conjunto de dados da NHTSA (por exemplo, de um período diferente) para avaliar a robustez do modelo treinado e detectar a presença de data drift.
 
-2. **[ ] API ou Script de Consumo**: Criar uma API REST simples (ou um script) que permita consumir o modelo treinado e fazer previsões com novas reclamações.
+2. **[X] API ou Script de Consumo**: Criar uma API REST simples (ou um script) que permita consumir o modelo treinado e fazer previsões com novas reclamações.
 
 3. **[ ] Implementação de testes automatizados**: Ambiente deve ser capáz de validar funções principais, similar a um ambiente de produção.
 
