@@ -11,5 +11,5 @@ Acessando o terminal, onde o usuário pode rodar o script *python -m models.mode
 
 Pela pasta ./notebooks acessando o arquivo Relatório.ipynb, que é o relatório sobre todo o projeto, detalhando o código como um todo, e ao mesmo tempo é uma maneira mais visual de ver o funcionamento do modelo.
 
-É possível utilizar os modelos treinados pelo notebook utilizando usando o FastAPI, use o script *python -m uvicorn src.deployment.api:app --host 0.0.0.0 --port 8000 --reload* e acesse o link gerado. Na api será possível utilziar uma versão adaptada para os padrões da api da função test_all_models.
+É possível utilizar os modelos treinados pelo notebook utilizando usando o FastAPI, use o script *python -m uvicorn src.deployment.api:app --host 0.0.0.0 --port 8000 --reload* e acesse o link gerado. Na api será possível utilizar uma versão adaptada para os padrões da api da função test_all_models.
 
