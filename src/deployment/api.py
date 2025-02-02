@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
-from src.data.train_test import test_all_models, load_model  # Adapte conforme o caminho correto para a função
+from src.data.train_test import test_all_models, load_model
 from sklearn.model_selection import train_test_split
 
 app = FastAPI()
@@ -25,7 +25,6 @@ def test_all_models(idx, models_dir="models"):
         y = df["MEDICAL_ATTN"]
         X = df.drop(columns=["MEDICAL_ATTN"])
 
-        # Aqui é feita a divisão de treino e teste, separando 20% dos dados para o teste.
         test_size = 0.2
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
     except Exception as e:
@@ -35,7 +34,6 @@ def test_all_models(idx, models_dir="models"):
     if idx < 0 or idx >= len(X_test):
         return {"Erro": f"Índice {idx} fora do intervalo válido. O valor de idx deve ser entre 0 e {len(X_test)-1}"}
     
-    # Carregar os modelos
     models = {}
     model_names = ["Logistic_Regression", "Random_Forest", "XGBoost"] 
     
@@ -44,8 +42,8 @@ def test_all_models(idx, models_dir="models"):
         if model is not None:
             models[model_name] = model
     
-    X_single = X_test.iloc[[idx]]  # Selecionar a linha de dados para o índice especificado
-    y_single = y_test.iloc[idx]  # O valor real do target para esse exemplo
+    X_single = X_test.iloc[[idx]] 
+    y_single = y_test.iloc[idx] 
     
     results = {}
     
@@ -75,7 +73,6 @@ class PredictionRequest(BaseModel):
 
 @app.post("/predict/")
 async def predict(request: PredictionRequest):
-    # Chame a função de teste
     try:
         results = test_all_models(request.idx, models_dir="notebooks/models")
     except Exception as e:
